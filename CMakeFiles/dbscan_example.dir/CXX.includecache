@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yatish/Desktop/hpcc_demo/simpledbscan/SimpleDBSCAN/dbscan.h
+vector
+-
+queue
+-
+set
+-
+memory
+-
+functional
+-
+kdtree.h
+/home/yatish/Desktop/hpcc_demo/simpledbscan/SimpleDBSCAN/kdtree.h
+
+/home/yatish/Desktop/hpcc_demo/simpledbscan/SimpleDBSCAN/kdtree.cpp
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+math.h
+-
+pthread.h
+-
+kdtree.h
+/home/yatish/Desktop/hpcc_demo/simpledbscan/SimpleDBSCAN/kdtree.h
+
+/home/yatish/Desktop/hpcc_demo/simpledbscan/SimpleDBSCAN/kdtree.h
+
+/home/yatish/Desktop/hpcc_demo/simpledbscan/SimpleDBSCAN/main.cpp
+dbscan.h
+/home/yatish/Desktop/hpcc_demo/simpledbscan/SimpleDBSCAN/dbscan.h
+vector
+-
+
