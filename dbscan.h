@@ -1,13 +1,4 @@
-//
-// Created by Nezha on 2016/12/15.
-//
 
-/**
-* REAMME *
-* @author: ZJ Jiang (Nezha)
-* @github: https://github.com/CallmeNezha/SimpleDBSCAN
-* @describe: This is a simple DBSCAN clustering method implement
-*/
 
 // Option brute force or use kdtree(by default)
 #define BRUTEFORCE false
