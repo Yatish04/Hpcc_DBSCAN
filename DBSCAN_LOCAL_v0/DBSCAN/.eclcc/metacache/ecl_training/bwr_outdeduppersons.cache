@@ -1,5 +1,0 @@
-<Cache hash="-6408385762853286541">
-<Attr module="ECL_Training" name="bwr_outdeduppersons">
- <Depend module="ECL_Training" name="deduppersons"/>
-</Attr>
-</Cache>

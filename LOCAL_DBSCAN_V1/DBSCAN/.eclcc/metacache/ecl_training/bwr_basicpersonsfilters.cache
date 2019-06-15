@@ -1,9 +1,0 @@
-<Cache hash="-6408385762853286541">
-<Attr module="ECL_Training" name="bwr_basicpersonsfilters">
- <Depend module="ECL_Training" name="persons"/>
-</Attr>
-<Simplified>
-EXPORT integer8 bwr_basicpersonsfilters := __SIMPLIFIED__(integer8);
-
-</Simplified>
-</Cache>

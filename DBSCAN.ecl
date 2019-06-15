@@ -1,7 +1,8 @@
 IMPORT datadbscan;
+out1rec := { unsigned i; unsigned j; }; 
 
 EXPORT DBSCAN :=MODULE
-    EXPORT SET OF INTEGER  FIT(DATASET(datadbscan.Layout) ds,numdims,num_records) := EMBED(C++)
+    EXPORT DATASET(out1rec)  FIT(DATASET(datadbscan.Layout) ds,numdims,num_records) := EMBED(C++)
     #include<iostream>
     #include "dbscan.h"
     #include "kdtree.cpp"
@@ -25,8 +26,10 @@ EXPORT DBSCAN :=MODULE
     //todo: have to interface the code here
     
     int i=num_records/numdims;
+    //i is num_records
     int j,k,t=0;
     int clusterno[i];
+    bool is_core[i];
     auto abc=vector<vec4f>{};
     for(j=0;j<i;j++){
         vec4f a = vec4f{};
@@ -46,33 +49,44 @@ EXPORT DBSCAN :=MODULE
     
 
     int cl=0;
+
+   
+    
     for(auto it=clusters.begin();it!=clusters.end();it++){
         for(auto j=(*it).begin();j!=(*it).end();j++){
             cout<<*j<<" ";
             clusterno[*j]=cl;
+            is_core[*j]=1;
         }
         cl++;
         cout<<"\n";
     }
 
 
-    cout<<"Noise"<<"\n";
+   cout<<"Noise"<<"\n";
     for(auto it : noise){
         cout<<it<<"\n";
         clusterno[it]=cl;
+        is_core[it]=0;
         cl++;
     }
-
+    for(auto u:clusterno)
+    cout <<" " << u;
     // v.push_back({vec});
 
     // RETURN 1;
     // __result = rtlMalloc(8);
     // *(unsigned *)__result = 91823;
     unsigned int n=(unsigned int)i;
-    __lenResult = n*sizeof(unsigned __int64);
+    __lenResult = 2*n*sizeof(unsigned __int64);
     __result = rtlMalloc(__lenResult);
-    for (unsigned t=0; t < n; t++)
-       ((unsigned __int64 *)__result)[t] = clusterno[t] ;
+    int l=0;
+    for (unsigned t=0; t < 2*n; t+=2){
+       ((unsigned __int64 *)__result)[t] = clusterno[l] ;
+       ((unsigned __int64 *)__result)[t+1] = is_core[l] ;
+       l+=1;
+
+    }
     // __result = clusterno;
     ENDEMBED;
 

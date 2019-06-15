@@ -1,7 +1,0 @@
-<Cache hash="-6408385762853286541">
-<Attr module="ECL_Training" name="fn_right4"/>
-<Simplified>
-EXPORT string fn_right4 := __SIMPLIFIED__(string);
-
-</Simplified>
-</Cache>

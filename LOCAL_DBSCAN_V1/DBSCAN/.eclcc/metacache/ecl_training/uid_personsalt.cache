@@ -1,6 +1,0 @@
-<Cache hash="-6408385762853286541">
-<Attr module="ECL_Training" name="uid_personsalt">
- <Depend module="ECL_Training" name="file_persons"/>
- <Depend module="std.system" name="thorlib"/>
-</Attr>
-</Cache>

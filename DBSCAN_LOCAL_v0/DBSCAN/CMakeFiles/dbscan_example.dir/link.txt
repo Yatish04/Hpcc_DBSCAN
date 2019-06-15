@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++11   CMakeFiles/dbscan_example.dir/kdtree.cpp.o CMakeFiles/dbscan_example.dir/main.cpp.o  -o dbscan_example 
